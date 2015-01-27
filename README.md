@@ -14,3 +14,4 @@ TODO
 * script to install xen
 * NFS for shared folders?
 * configure bridge adaptor + DHCP
+* Vagrantfile template with host only + NIC promiscuos mode settings
