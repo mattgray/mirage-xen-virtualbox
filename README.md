@@ -6,3 +6,11 @@ Packer template to build Vagrant based Ubuntu + Xen development environment, bas
 Ubuntu packer template based on: https://github.com/shiguredo/packer-templates/tree/develop/ubuntu-14.04
 
 :horse:
+
+TODO
+----
+
+* Do virtualbox guest additions work with xen at all?
+* script to install xen
+* NFS for shared folders?
+* configure bridge adaptor + DHCP
