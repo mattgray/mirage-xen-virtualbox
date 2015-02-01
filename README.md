@@ -10,8 +10,8 @@ Ubuntu packer template based on: https://github.com/shiguredo/packer-templates/t
 TODO
 ----
 
-* Do virtualbox guest additions work with xen at all?
-* script to install xen
-* NFS for shared folders?
+* ~~Do virtualbox guest additions work with xen at all?~~
+* ~~script to install xen~~
+* ~~NFS for shared folders?~~
 * configure bridge adaptor + DHCP
-* Vagrantfile template with host only + NIC promiscuos mode settings
+* ~~Vagrantfile template with host only + NIC promiscuos mode settings~~
