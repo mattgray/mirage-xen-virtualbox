@@ -28,6 +28,26 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virtualbox" do |vbox|
     vbox.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
   end
+
+  config.vm.provision "shell", :inline => <<-END
+    apt-get install -y dnsmasq
+    ip_addr=$(ifquery eth1 | grep address | cut -d' ' -f2)
+    subnet=$(echo $ip_addr | cut -d. -f1-3)
+
+    echo "auto br0" >> /etc/network/interfaces
+    echo "iface br0 inet static" >> /etc/network/interfaces
+    echo "    address $ip_addr" >> /etc/network/interfaces
+    echo "    netmask 255.255.255.0" >> /etc/network/interfaces
+    echo "    bridge_ports eth1" >> /etc/network/interfaces
+    echo "    up /sbin/brctl setageing br0 0" >> /etc/network/interfaces
+    echo "    up /sbin/brctl stp br0 off" >> /etc/network/interfaces
+
+    ifup br0
+    echo "interface=br0" >> /etc/dnsmasq.conf
+    echo "dhcp-range=$subnet.150,$subnet.200,1h" >> /etc/dnsmasq.conf
+    /etc/init.d/dnsmasq restart
+  END
+
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
