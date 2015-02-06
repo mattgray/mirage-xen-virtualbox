@@ -13,5 +13,14 @@ TODO
 * ~~Do virtualbox guest additions work with xen at all?~~
 * ~~script to install xen~~
 * ~~NFS for shared folders?~~
-* configure bridge adaptor + DHCP
+* ~~configure bridge adaptor + DHCP~~
 * ~~Vagrantfile template with host only + NIC promiscuos mode settings~~
+* Install avahi-daemon?
+* Install git / build essential
+* Install ocaml / opam (into image?)
+  * best way to install opam?
+  * use ocamlbrew??
+  * or 0install, but not take the x dependency?
+* Test building a skeleton
+* Make it so that mirage builds can be pushed to the box and compiled and run
+* Make it so that running unikernels can be registered into DNS
