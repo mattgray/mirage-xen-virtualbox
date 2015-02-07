@@ -9,6 +9,7 @@
             "scripts/base.sh",
             "scripts/vagrant.sh",
             "scripts/xen.sh",
+            "scripts/toolchain.sh",
             "scripts/cleanup.sh"
           ]
         }
