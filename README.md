@@ -15,9 +15,9 @@ TODO
 * ~~NFS for shared folders?~~
 * ~~configure bridge adaptor + DHCP~~
 * ~~Vagrantfile template with host only + NIC promiscuos mode settings~~
-* ~~ Install avahi-daemon? ~~
-* ~~ Install git / build essential ~~
-* ~~ Install ocaml / opam (into image?) ~~
-* ~~ Test building a skeleton ~~
+* ~~Install avahi-daemon?~~
+* ~~Install git / build essential~~
+* ~~Install ocaml / opam (into image?)~~
+* ~~Test building a skeleton~~
 * Make it so that mirage builds can be pushed to the box and compiled and run
 * Make it so that running unikernels can be registered into DNS
