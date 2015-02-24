@@ -1,7 +1,7 @@
 mirage-xen-virtualbox
 =====================
 
-Packer template to build Vagrant / Virtualbox based Ubuntu + Xen development environment, based on blog post here: http://www.skjegstad.com/blog/2015/01/19/mirageos-xen-virtualbox/
+A Packer template to build an environment in which to run [MirageOS](http://www.openmirage.org/) unikernels under Xen. It uses Vagrant, Virualbox and is based on Ubuntu 14.04. It's based on the blog post here: http://www.skjegstad.com/blog/2015/01/19/mirageos-xen-virtualbox/
 
 Ubuntu packer template based on: https://github.com/shiguredo/packer-templates/tree/develop/ubuntu-14.04
 
