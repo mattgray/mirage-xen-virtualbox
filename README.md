@@ -1,7 +1,7 @@
 mirage-xen-virtualbox
 =====================
 
-A Packer template to build an environment in which to run [MirageOS](http://www.openmirage.org/) unikernels under Xen. It uses Vagrant, Virualbox and is based on Ubuntu 14.04. It's based on the blog post here: http://www.skjegstad.com/blog/2015/01/19/mirageos-xen-virtualbox/
+A Packer template to build an environment in which to run [MirageOS](http://www.openmirage.org/) unikernels under Xen. It uses Vagrant, Virtualbox and is based on Ubuntu 14.04. It's based on the blog post here: http://www.skjegstad.com/blog/2015/01/19/mirageos-xen-virtualbox/
 
 Ubuntu packer template based on: https://github.com/shiguredo/packer-templates/tree/develop/ubuntu-14.04
 
@@ -22,7 +22,7 @@ There are a few possibilties of how to use it. The simplest is documented here
 * Import the `.box` file into Vagrant `vagrant box add virtualbox-xen.box --name virtualbox-xen`
 * In an empty directory, `vagrant init virtualbox-xen` - this creates a Vagrantfile
 * Spin up the box and provision it: `vagrant up`
-* * this sets up a bridge interface and installs `opam` and `mirage` for the vagrant user
+  * this sets up a bridge interface and installs `opam` and `mirage` for the vagrant user
 * `vagrant ssh`
 * Then clone eg. `mirage-skeleton` and build :)
 
