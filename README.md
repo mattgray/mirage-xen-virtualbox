@@ -28,6 +28,11 @@ There are a few possibilties of how to use it. The simplest is documented here
 
 I think it should be possible to customise the Vagrantfile generated in step 2 to allow NFS shared folders, or a different private network subnet. But I haven't tested those yet (see TODO)
 
+BUGS (KNOWN)
+------------
+
+For some reason https://github.com/mattgray/mirage-xen-virtualbox/blob/master/scripts/toolchain.sh does not install m4 correctly, causing `opam install -y mirage` to fail during provisioning. The fix is to `vagrant ssh` and install manually, then repeat the `opam install <xyz>`
+
 TODO
 ----
 
