@@ -45,9 +45,9 @@ TODO
 * ~~Install git / build essential~~
 * ~~Install ocaml / opam (into image?)~~
 * ~~Test building a skeleton~~
-* Figure out why `m4` is not installed by packer scripts, thus preventing provisioners from working
+* ~~Figure out why `m4` is not installed by packer scripts, thus preventing provisioners from working~~
 * Test bridge config works with overridden `private_network` in Vagrantfile
-* Test NFS synced folders
+* ~~Test NFS synced folders~~
 * Make it so that mirage builds can be pushed to the box and compiled and run with no command line interaction to the VM
 * Make it so that running unikernels can be registered into avahi DNS automatically by parsing console output for DHCP assigned IPs
 *  Support VMWare? But i don't have vmware available to test
