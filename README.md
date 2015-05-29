@@ -31,7 +31,9 @@ I think it should be possible to customise the Vagrantfile generated in step 2 t
 BUGS (KNOWN)
 ------------
 
-For some reason https://github.com/mattgray/mirage-xen-virtualbox/blob/master/scripts/toolchain.sh does not install m4 correctly, causing `opam install -y mirage` to fail during provisioning. The fix is to `vagrant ssh` and install manually, then repeat the `opam install <xyz>`
+FIXED ~~For some reason https://github.com/mattgray/mirage-xen-virtualbox/blob/master/scripts/toolchain.sh does not install m4 correctly, causing `opam install -y mirage` to fail during provisioning. The fix is to `vagrant ssh` and install manually, then repeat the `opam install <xyz>`~~
+
+direct networking does  not work out of the box (have to do some manual setup of `tap0`, but maybe this is an issue with `ocaml-tuntap` or `mirage-net-unix` ?
 
 TODO
 ----
