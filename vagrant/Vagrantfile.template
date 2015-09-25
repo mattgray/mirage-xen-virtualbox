@@ -12,10 +12,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vbox.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
   end
 
-  config.vm.provision "shell", :inline => <<-END
+  config.vm.provision "shell", :inline => <<-NETWORK
+
+    #get the IP address as configured by Vagrant
     ip_addr=$(ifquery eth1 | grep address | cut -d' ' -f2)
     subnet=$(echo $ip_addr | cut -d. -f1-3)
 
+    # network bridge
     tee -a /etc/network/interfaces <<BRIDGE
     auto br0
     iface br0 inet static
@@ -26,10 +29,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     up /sbin/brctl stp br0 off
 BRIDGE
     ifup br0
+
+    # tap device
+    ip tuntap add dev tap0 mode tap user vagrant
+    brctl addif br0 tap0
+    ip link set tap0 up
+
     echo "interface=br0" >> /etc/dnsmasq.conf
     echo "dhcp-range=$subnet.150,$subnet.200,1h" >> /etc/dnsmasq.conf
     /etc/init.d/dnsmasq restart
-  END
+  NETWORK
 
   config.vm.provision "shell", inline: "yes | opam init", privileged: false
   config.vm.provision "shell", inline: "opam install -y mirage", privileged: false
