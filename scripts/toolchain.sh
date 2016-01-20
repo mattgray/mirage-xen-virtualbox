@@ -1,7 +1,10 @@
+export DEBIAN_FRONTEND="noninteractive"
+
 apt-get install -y m4
 apt-get install -y make
 apt-get install -y vim
 apt-get install -y git
+apt-get install -y curl
 apt-get install -y libssl-dev
 apt-get install -y pkg-config
 apt-get install -y software-properties-common

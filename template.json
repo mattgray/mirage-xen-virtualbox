@@ -11,6 +11,7 @@
             "scripts/xen.sh",
             "scripts/network.sh",
             "scripts/toolchain.sh",
+            "scripts/mirage.sh",
             "scripts/cleanup.sh"
           ]
         }
