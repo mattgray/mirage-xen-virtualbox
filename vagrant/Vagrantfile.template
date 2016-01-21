@@ -39,9 +39,6 @@ BRIDGE
     echo "dhcp-range=$subnet.150,$subnet.200,1h" >> /etc/dnsmasq.conf
     /etc/init.d/dnsmasq restart
   NETWORK
-
-  config.vm.provision "shell", inline: "yes | opam init", privileged: false
-  config.vm.provision "shell", inline: "opam install -y mirage", privileged: false
-
+  config.vm.provision "shell", inline: "eval `opam config env`", privileged: false
   config.vm.synced_folder ".", "/vagrant", disabled: true
 end
