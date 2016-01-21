@@ -19,15 +19,22 @@
     }
   ],
   "post-processors": [
+  [
     {
       "type": "vagrant",
       "vagrantfile_template": "vagrant/Vagrantfile.template",
-      "override": {
-        "virtualbox": {
-          "output": "mirage-xen-virtualbox.box"
-        }
+      "keep_input_artifact": false
+    },
+    {
+      "type": "atlas",
+      "only": ["virtualbox-iso"],
+      "artifact": "mattg/mirage-xen-virtualbox",
+      "artifact_type": "vagrant.box",
+      "metadata": {
+        "provider": "virtualbox",
+        "version": "0.0.3"
       }
-    }
+    }]
   ],
   "builders": [
     {
